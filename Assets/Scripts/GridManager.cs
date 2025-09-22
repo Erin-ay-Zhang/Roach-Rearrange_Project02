@@ -160,7 +160,7 @@ public class GridManager : MonoBehaviour
         }
         else
         {
-            SwapRooms(selectedA, r);
+            //SwapRooms(selectedA, r);
             HighlightRoom(selectedA, false);
             selectedA = null;
         }

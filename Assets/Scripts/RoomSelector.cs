@@ -22,8 +22,11 @@ public class RoomSelector : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("交换房间: " + firstSelected.name + " <-> " + room.name);
-                        GridManager.Instance.SwapRooms(firstSelected, room);
+                        if(firstSelected != room)
+                        {
+                            Debug.Log("交换房间: " + firstSelected.name + " <-> " + room.name);
+                            GridManager.Instance.SwapRooms(firstSelected, room);
+                        }
                         firstSelected = null; // 重置
                     }
                 }

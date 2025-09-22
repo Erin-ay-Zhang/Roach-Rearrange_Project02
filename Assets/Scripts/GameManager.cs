@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         if (cockroachManager != null && cockroachManager.allRoaches.Count == 0)
         {
             // win
-            Debug.Log("胜利：所有蟑螂已被清除！");
+            //Debug.Log("胜利：所有蟑螂已被清除！");
         }
     }
 
