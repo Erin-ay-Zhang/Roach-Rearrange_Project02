@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
     // Called by DoorCollider when player goes through a door trigger
     public void EnterRoom(Room target)
     {
+        Debug.Log("EnterRoom: " + target.name);
         if (target == null || target == currentRoom) return;
         previousRoom = currentRoom;
         currentRoom = target;

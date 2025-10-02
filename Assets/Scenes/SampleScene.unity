@@ -122,6 +122,16 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &19992897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4481788941940479141, guid: c6820c705300eed499393092105a79e6, type: 3}
+  m_PrefabInstance: {fileID: 436900316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &44537144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2847131545485364747, guid: c6820c705300eed499393092105a79e6, type: 3}
+  m_PrefabInstance: {fileID: 436900316}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &119548833
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +220,19 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2644997579510891813, guid: c6820c705300eed499393092105a79e6, type: 3}
+      propertyPath: m_Name
+      value: Door_Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644997579510891813, guid: c6820c705300eed499393092105a79e6, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847131545485364747, guid: c6820c705300eed499393092105a79e6, type: 3}
+      propertyPath: m_Name
+      value: Door_Up
+      objectReference: {fileID: 0}
+    - target: {fileID: 3512395064288856211, guid: c6820c705300eed499393092105a79e6, type: 3}
+      propertyPath: side
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3701808362365533900, guid: c6820c705300eed499393092105a79e6, type: 3}
@@ -257,9 +279,45 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4439301815795256289, guid: c6820c705300eed499393092105a79e6, type: 3}
+      propertyPath: side
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4481788941940479141, guid: c6820c705300eed499393092105a79e6, type: 3}
+      propertyPath: m_Name
+      value: Door_Down
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487334136346904620, guid: c6820c705300eed499393092105a79e6, type: 3}
+      propertyPath: side
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827324929389966419, guid: c6820c705300eed499393092105a79e6, type: 3}
+      propertyPath: doorObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 44537144}
+    - target: {fileID: 4827324929389966419, guid: c6820c705300eed499393092105a79e6, type: 3}
+      propertyPath: doorObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 1090501757}
+    - target: {fileID: 4827324929389966419, guid: c6820c705300eed499393092105a79e6, type: 3}
+      propertyPath: doorObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 19992897}
+    - target: {fileID: 4827324929389966419, guid: c6820c705300eed499393092105a79e6, type: 3}
+      propertyPath: doorObjects.Array.data[3]
+      value: 
+      objectReference: {fileID: 724175001}
+    - target: {fileID: 4901877730398360028, guid: c6820c705300eed499393092105a79e6, type: 3}
+      propertyPath: m_Name
+      value: Door_Right
+      objectReference: {fileID: 0}
     - target: {fileID: 5078850575515509900, guid: c6820c705300eed499393092105a79e6, type: 3}
       propertyPath: m_Name
       value: Room_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9035646424391756518, guid: c6820c705300eed499393092105a79e6, type: 3}
+      propertyPath: side
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -449,6 +507,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &724175001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2644997579510891813, guid: c6820c705300eed499393092105a79e6, type: 3}
+  m_PrefabInstance: {fileID: 436900316}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &779261277
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +744,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1090501757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4901877730398360028, guid: c6820c705300eed499393092105a79e6, type: 3}
+  m_PrefabInstance: {fileID: 436900316}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1234415567
 GameObject:
   m_ObjectHideFlags: 0
