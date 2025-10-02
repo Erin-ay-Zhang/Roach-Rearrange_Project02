@@ -86,6 +86,30 @@ public class GridManager : MonoBehaviour
         return a.HasDoor(s) && neighbor.HasDoor(opp);
     }
 
+    private void MoveEntitiesWithRoom(Room room)
+    {
+        if (room == null) return;
+
+        // 移动 Cockroach
+        Cockroach[] roaches = room.GetComponentsInChildren<Cockroach>(true);
+        foreach (var r in roaches)
+        {
+            r.currentRoom = room;
+            r.transform.SetParent(room.transform, true);
+            r.SendMessage("PickNewTarget", SendMessageOptions.DontRequireReceiver);
+        }
+
+        // 移动 Player
+        PlayerController player = room.GetComponentInChildren<PlayerController>(true);
+        if (player != null)
+        {
+            player.currentRoom = room;
+            player.transform.SetParent(room.transform, true);
+            player.transform.position = room.GetRandomPointInside() + Vector3.up * 0.5f;
+        }
+    }
+
+
     public void SwapRooms(Room a, Room b)
     {
         if (a == null || b == null) return;
@@ -106,9 +130,42 @@ public class GridManager : MonoBehaviour
         a.transform.position = b.transform.position;
         b.transform.position = tempPos;
 
+        // === 🟢 移动房间里的蟑螂 ===
+        foreach (var roach in new List<Cockroach>(a.roachesInside))
+        {
+            roach.currentRoom = a;
+            roach.transform.position = a.GetRandomPointInside();
+        }
+        foreach (var roach in new List<Cockroach>(b.roachesInside))
+        {
+            roach.currentRoom = b;
+            roach.transform.position = b.GetRandomPointInside();
+        }
+
+        // === 🟢 如果玩家在这两个房间里，更新位置和 currentRoom ===
+        PlayerController player = FindObjectOfType<PlayerController>();
+        if (player != null)
+        {
+            if (player.currentRoom == a)
+            {
+                player.transform.position = a.GetRandomPointInside() + Vector3.up * 0.5f;
+                player.currentRoom = a;
+            }
+            else if (player.currentRoom == b)
+            {
+                player.transform.position = b.GetRandomPointInside() + Vector3.up * 0.5f;
+                player.currentRoom = b;
+            }
+        }
+
         // 更新门逻辑
         UpdateAdjacencyAround(pa);
         UpdateAdjacencyAround(pb);
+
+        //新增：交换后让里面的实体跟着房间
+        MoveEntitiesWithRoom(a);
+        MoveEntitiesWithRoom(b);
+
 
         Debug.Log($"Swapped rooms: {a.name} <-> {b.name}");
     }

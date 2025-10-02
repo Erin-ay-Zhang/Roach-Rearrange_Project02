@@ -2,7 +2,7 @@
 - Project name: Project2_Roach Rearrange
 - Unity version: Unity 2022.3.43f1c1
 - Active game object:
-  - Name: Room_2
+  - Name: UI
   - Tag: Untagged
-  - Layer: Default
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
